@@ -1,0 +1,78 @@
+/* "https:@import url(//fonts.googleapis.com/css?familyay=swap");=Lato&displ */
+*{
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    margin: 0;
+    font-family: "Lato",sans-serif;
+    background: rgb(55,233,57);
+    background: linear-gradient(
+        27deg,
+        rgba(55,233,57,0.7876400560224089)28%,
+        rgba(133,17,40,1)74%
+    );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.music-container{
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 20px 20px 0 rgba(252,169,169,0.6);
+    display: flex;
+    padding: 20px 30px;
+    position: relative;
+    margin: 100px 0;
+    z-index: 10;
+}
+
+.img-container {
+    position: relative;
+    width: 110px;
+}
+.img-container::after{
+    content: "";
+    background-color: #fff;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+.img-container img{
+    width: inherit;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    animation: rotate 3s linear infinite;
+    animation-play-state: paused ;
+}
+
+.music-container.play .img-container img{
+    animation-play-state: running;
+}
+@keyframes rotate {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+.navigation{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
